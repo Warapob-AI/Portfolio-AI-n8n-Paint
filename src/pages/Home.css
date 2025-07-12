@@ -1,0 +1,15 @@
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 2px #b833ff, 0 0 4px #b833ff, 0 0 0px #b833ff;
+  }
+  50% {
+    box-shadow: 0 0 8px #b833ff, 0 0 16px #d35bff, 0 0 0px #f2a2ff;
+  }
+  100% {
+    box-shadow: 0 0 2px #b833ff, 0 0 4px #b833ff, 0 0 0px #b833ff;
+  }
+}
+
+.neon-border {
+  animation: neonPulse 5s infinite ease-in-out;
+}
