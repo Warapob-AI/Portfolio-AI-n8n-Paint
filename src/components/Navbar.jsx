@@ -40,6 +40,7 @@ function Navbar() {
         zIndex: 1300,
         boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
         userSelect: 'none',
+        px: 2,
         margin: { xs: '20px 0 0 0' },
       }}
     >
