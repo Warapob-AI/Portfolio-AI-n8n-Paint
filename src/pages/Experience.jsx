@@ -196,7 +196,7 @@ function Experience() {
                 </Grid>
 
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
-                    Deep Learning - Classification Face Idle K-Pop
+                    Deep Learning - Classification Brain Tumor MRI
                 </Typography>
 
                 <Grid container spacing={5} >
