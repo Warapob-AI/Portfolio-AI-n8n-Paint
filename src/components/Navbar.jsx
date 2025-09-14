@@ -47,7 +47,7 @@ function Navbar() {
       <Box sx={{ display: 'flex', width: '100%', alignItems: 'center' }}>
         <Typography sx={{ fontWeight: 600, fontSize: '1rem', color: '#eee', marginLeft: '1rem' }}>
           <Typewriter
-            words={['AI Developer', 'Software Developer', 'Full Stack Developer']}
+            words={['Cybersecurity', 'Software Developer', 'Full Stack Developer']}
             loop={0}
             cursor
             cursorStyle="|"

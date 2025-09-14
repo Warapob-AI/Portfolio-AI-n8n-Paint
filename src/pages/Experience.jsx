@@ -14,6 +14,7 @@ import web_1 from '../assets/images/web-1.png'
 import web_2 from '../assets/images/web-2.png'
 import buz_1 from '../assets/images/buz-1.png'
 import buz_2 from '../assets/images/buz-2.png'
+import cybersecurity from '../assets/images/Certificate_1650706094_Warapob-1.png'
 import google from '../assets/images/google.png'
 import meta from '../assets/images/meta.png'
 import IBM from '../assets/images/IBM.png'
@@ -76,7 +77,7 @@ function Experience() {
 
 
                         <Typography variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
-                            ผมมีประสบการณ์การฝึกงานจาก Unicorn Tech Integration ซึ่งเป็นบริษัทเทคโนโลยีชั้นนำที่ทำงานร่วมกับ Villa Market ในระยะเวลา 6 เดือน (พฤษภาคม - พฤศจิกายน)
+                            ผมมีประสบการณ์การฝึกงานจาก Unicorn Tech Integration ซึ่งเป็นบริษัทเทคโนโลยีชั้นนำที่ทำงานร่วมกับ Villa Market ในระยะเวลา 3 เดือน (พฤษภาคม - สิงหาคม)
                             และได้สั่งสมประสบการณ์และทักษะที่จำเป็นต่อการทำงานจริง ไม่ว่าจะเป็น
                             <br />• การนำเสนอและพูดคุยกับ CTO ในเรื่องของการทำงานโดยตรง
                             <br />• การทำงานพูดคุยร่วมกันเป็นทีมอย่างมีประสิทธิภาพ
@@ -401,6 +402,38 @@ function Experience() {
                 </Typography>
 
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
+                    Certificate - BASIC CYBERSECURITY MOOC
+                </Typography>
+
+                <Grid container spacing={5} >
+                    <Grid data-aos="fade-right" data-aos-delay="0"
+                        size={{ xs: 12, md: 6 }}
+                        sx={{
+                            mx: 2
+
+                        }}>
+                        <div className='border-animated-wrapper'>
+
+
+                            <img
+                                src={cybersecurity}
+                                width="100%"
+                                height="auto"
+                                style={{ height: 'auto' }}
+                            />
+                        </div>
+                    </Grid>
+
+                    <Grid data-aos="fade-left" data-aos-delay="0" size={{ xs: 12, md: 5.5 }} >
+                        <Typography marginLeft={2} variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
+                            <br />• เป็นเกียรติบัตรที่รับรองการสำเร็จหลักสูตรออนไลน์ที่มีผู้สร้างหลักสูตรคือ MOOC
+                            <br />• Basic Cybersecurity (พื้นฐานของความมั่นคงปลอดภัยทางไซเบอร์)
+                            <br />• รองรับโดย MOOC
+                        </Typography>
+                    </Grid>
+                </Grid>
+                
+                <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Foundations of Data Science
                 </Typography>
 
@@ -431,6 +464,10 @@ function Experience() {
                         </Typography>
                     </Grid>
                 </Grid>
+
+
+
+                
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Introduction of Front-End Development
                 </Typography>
