@@ -14,8 +14,11 @@ import web_1 from '../assets/images/web-1.png'
 import web_2 from '../assets/images/web-2.png'
 import buz_1 from '../assets/images/buz-1.png'
 import buz_2 from '../assets/images/buz-2.png'
+<<<<<<< HEAD
 import udetectionnews_1 from '../assets/images/UDetectionNews_1.png'
 import udetectionnews_2 from '../assets/images/UDetectionNews_2.png'
+=======
+>>>>>>> d3528d12886d9533dbf6f6306034485ca932ac51
 import cybersecurity from '../assets/images/Certificate_1650706094_Warapob-1.png'
 import google from '../assets/images/google.png'
 import meta from '../assets/images/meta.png'
@@ -90,6 +93,7 @@ function Experience() {
                         </Typography>
                     </Grid>
                 </Grid>
+<<<<<<< HEAD
                 
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Website - Detection Fake News Thailand
@@ -147,6 +151,8 @@ function Experience() {
                     <br />• ใช้ทีมปัญญาประดิษฐ์ (AI Agents) ที่ทำงานประสานกันเป็นระบบ
                     <br />• พัฒนาเว็บไซต์โดยใช้เทคโนโลยี React.js สำหรับส่วนติดต่อผู้ใช้ (UI), Python (FastAPI) สำหรับเซิร์ฟเวอร์หลัก MongoDB จัดเก็บข้อมูล
                 </Typography>
+=======
+>>>>>>> d3528d12886d9533dbf6f6306034485ca932ac51
 
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={'2.2rem'} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     n8n - Build AI Dime Message Gmail
@@ -175,7 +181,10 @@ function Experience() {
                             <br />• Workflow นี้ช่วยให้ผมสามารถติดตามผลการลงทุนได้อย่างอัตโนมัติ ประหยัดเวลาในการตรวจสอบอีเมลและคำนวณด้วยตนเอง
                         </Typography>
                     </Grid>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3528d12886d9533dbf6f6306034485ca932ac51
                     <Grid size={{ xs: 12, md: 5 }} data-aos="fade-left" data-aos-delay="100">
                         <Box
                             sx={{
