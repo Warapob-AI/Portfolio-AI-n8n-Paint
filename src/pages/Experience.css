@@ -1,0 +1,99 @@
+.border-animated-wrapper {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    color: white;
+    text-shadow: 0 1px 0 #000;
+
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+    );
+
+    border: solid 2px transparent;
+    border-radius: 0; /* ✅ ขอบเหลี่ยม */
+    --gradient-border: conic-gradient(
+        from var(--border-angle),
+        transparent 25%,
+        rgb(35, 86, 180),
+        rgb(207, 33, 62) 99%,
+        transparent
+    );
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+
+    animation: bg-spin 5s linear infinite;
+}
+
+
+
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+.border-animated-n8n {
+    width: 80%;
+    display: grid;
+    place-content: center;
+    color: white;
+    text-shadow: 0 1px 0 #000;
+
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+    );
+
+    border: solid 2px transparent;
+    border-radius: 0;
+    --gradient-border: conic-gradient(
+        from var(--border-angle),
+        transparent 25%,
+        rgb(35, 180, 71),
+        rgb(44, 236, 204) 99%,
+        transparent
+    );
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+    animation: bg-spin 5s linear infinite;
+}
+
+/* ✅ Responsive: เมื่อหน้าจอกว้างไม่เกิน 960px (md) */
+@media (max-width: 899px) {
+    .border-animated-n8n {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+}
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
