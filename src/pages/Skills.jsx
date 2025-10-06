@@ -242,7 +242,7 @@ function Skill() {
                             Tools
 
                         </Typography>
-                        <Grid container spacing={3} justifyContent="left">
+                        <Grid container spacing={3} justifyContent="left" marginLeft={{ md: '4rem' }}>
                             {[
 
                                 {
