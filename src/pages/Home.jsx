@@ -74,11 +74,7 @@ export default function Home({ onStartClick }) {
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
-<<<<<<< HEAD
                     Full-Stack Developer
-=======
-                    โปรแกรมเมอร์ที่ฝันทำอาชีพ Cybersecurity
->>>>>>> d3528d12886d9533dbf6f6306034485ca932ac51
                 </Typography>
 
                 <Typography
@@ -92,48 +88,11 @@ export default function Home({ onStartClick }) {
                     สวัสดีครับ! ผมชื่อ วราภพ ควินรัมย์ หรือเรียกผมว่า "เพ้นท์" ก็ได้ครับ ตอนนี้ผมเป็นนักศึกษาชั้นปีที่ 4 คณะเทคโนโลยีสารสนเทศและนวัตกรรม สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยกรุงเทพ 
                     นี่คือเว็บไซต์ Portfolio ส่วนตัวของผม ที่ใช้แสดงทักษะและโปรเจกต์ต่าง ๆ
                     <br />
-<<<<<<< HEAD
                     เป้าหมายในสายอาชีพของผมคือ Full-Stack Developer, Software Developer หรือ AI Developer ผมมีความสามารถในการปรับตัวและไม่กลัวเทคโนโลยีใหม่ ๆ เรียกได้ว่า พร้อมสู้ตลอดทาง!
                     ผมมีความชื่นชอบในการเขียนโปรแกรม แก้ไขปัญหาที่จะเกิดขึ้น และไม่ย่อท้อต่อปัญหาที่เกิดขึ้น ถ้ารับผมเข้าไปทำงานด้วย ผมจะพยายามผลักดันให้องค์กรพัฒนาได้ดียิ่งขึ้นไปอีก!
-=======
-                    เป้าหมายในสายอาชีพของผมคือ การเป็นนักพัฒนาระบบรักษาความปลอดภัย (Cybersecurity), นักพัฒนาซอฟต์แวร์ (Software Developer) หรือ Full Stack Developer
-                    ผมมีความชื่นชอบในการตรวจจับระบบหรือแฮกเกอร์ข้อมูล ที่สามารถใช้แก้ไขปัญหาจริงในโลก และเรียนรู้เทคโนโลยีใหม่ ๆ อย่างต่อเนื่องแบบไม่หยุดพัก!
->>>>>>> d3528d12886d9533dbf6f6306034485ca932ac51
 
                    
                 </Typography>
-                <Button
-                    variant="contained"
-                    size="large"
-                    sx={{
-                        width: '10rem',
-                        height: '2.8rem',
-                        mt: {xs: 1, sm: 3},
-                        backgroundImage: 'linear-gradient(to right, rgb(169, 26, 213), rgb(124, 41, 145))',
-                        color: 'white',
-                        border: '2px solid rgba(255, 0, 255, 0.3)',
-                        boxShadow: '0 0 10px rgba(255, 0, 255, 0.4)',
-                        transition: 'all 0.3s ease-in-out',
-                        '&:hover': {
-                            backgroundImage: 'linear-gradient(to right, rgb(200, 50, 255), rgb(255, 100, 255))',
-                            color: '#fff',
-                            boxShadow: `
-                0 0 10px rgba(255, 0, 255, 0.6),
-                0 0 20px rgba(255, 0, 255, 0.6),
-                0 0 30px rgba(255, 0, 255, 0.6)
-            `,
-                            transform: 'scale(1.05)',
-                        },
-                    }}
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                     onClick={handleScroll}
-                >
-                    เริ่มเลย!
-
-                      
-
-                </Button>
 
             </Container>
         </Box>
