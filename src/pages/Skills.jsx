@@ -8,20 +8,24 @@ import BuildIcon from '@mui/icons-material/Build';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 import { FaHtml5, FaCss3Alt, FaSass, FaJs, FaReact, FaBootstrap, FaPython, FaJava } from 'react-icons/fa';
-import { SiMui, SiStreamlit, SiSqlite } from 'react-icons/si';
-
+import { SiMui, SiStreamlit, SiSqlite, SiAngular, SiTypescript, SiSpring, SiMongodb, SiNextdotjs } from 'react-icons/si';
 
 const skills = [
     { name: 'HTML', icon: <FaHtml5 size={48} color="#E44D26" /> },
     { name: 'CSS', icon: <FaCss3Alt size={48} color="#264DE4" /> },
     { name: 'SASS', icon: <FaSass size={48} color="#CD6799" /> },
     { name: 'JavaScript', icon: <FaJs size={48} color="#F7DF1E" /> },
+    { name: 'TypeScript', icon: <SiTypescript size={48} color="#3178C6" /> },
+    { name: 'Angular', icon: <SiAngular size={48} color="#DD0031" /> },
     { name: 'React', icon: <FaReact size={48} color="#61DBFB" /> },
+    { name: 'Next.js', icon: <SiNextdotjs size={48} color="#FFFFFF" /> },
     { name: 'Bootstrap', icon: <FaBootstrap size={48} color="#7952B3" /> },
     { name: 'Material UI', icon: <SiMui size={48} color="#007FFF" /> },
     { name: 'Python', icon: <FaPython size={48} color="#306998" /> },
     { name: 'Java', icon: <FaJava size={48} color="#f89820" /> },
+    { name: 'Spring Boot', icon: <SiSpring size={48} color="#6DB33F" /> },
     { name: 'SQLite', icon: <SiSqlite size={48} color="#f89820" /> },
+    { name: 'MongoDB', icon: <SiMongodb size={48} color="#4EA94B" /> },
 ];
 
 function Skill() {
@@ -191,16 +195,16 @@ function Skill() {
                                     img: 'https://numpy.org/images/logo.svg',
                                 },
                                 {
-                                    name: 'Matplotlib',
-                                    img: 'https://matplotlib.org/_static/images/logo2.svg',
-                                },
-                                {
-                                    name: 'PowerBI',
-                                    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/1200px-New_Power_BI_Logo.svg.png',
-                                },
-                                {
                                     name: 'Microsoft Excel',
                                     img: 'https://cdn.iconscout.com/icon/free/png-256/free-microsoft-excel-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-1-pack-logos-icons-3030062.png',
+                                },
+                                {
+                                    name: 'Docker',
+                                    img: 'https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png',
+                                },
+                                {
+                                    name: 'Jira',
+                                    img: 'https://cdn.worldvectorlogo.com/logos/jira-1.svg',
                                 },
                             ].map((skill, index) => (
                                 <Grid item xs={6} sm={4} md={3} key={index} mr={2} data-aos="fade-left"
@@ -254,16 +258,8 @@ function Skill() {
                                     img: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
                                 },
                                 {
-                                    name: 'VS Code',
-                                    img: 'https://code.visualstudio.com/assets/images/code-stable.png',
-                                },
-                                {
                                     name: 'Figma',
                                     img: 'https://images.icon-icons.com/2429/PNG/512/figma_logo_icon_147289.png',
-                                },
-                                {
-                                    name: 'Microsoft Teams',
-                                    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png',
                                 },
                                 {
                                     name: 'AWS',

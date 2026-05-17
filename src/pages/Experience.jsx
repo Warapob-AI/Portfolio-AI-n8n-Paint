@@ -7,6 +7,7 @@ import n8n_exp_1_1 from '../assets/images/n8n-experience-1-1.jpg'
 import n8n_exp_2 from '../assets/images/n8n-experience-2.jpg'
 import n8n_exp_2_2 from '../assets/images/n8n-experience-2-2.jpg'
 
+import logo_gable from '../assets/images/G-Able.png'
 import logo_unicorn from '../assets/images/logo-about.svg'
 import face_idle from '../assets/images/ML-Classification-Face-Idle.jpg'
 import brian_tumor from '../assets/images/DL-Classification-Brain-Tumor.jpg'
@@ -32,6 +33,71 @@ function Experience() {
                 </Typography>
 
                 <Box my={3}></Box>
+
+                <Grid container spacing={10}>
+                    <Grid data-aos="fade-right" data-aos-delay="0"
+                        size={{ xs: 12, lg: 4 }}
+                        sx={{
+                            ml: { xs: 0, lg: 10 },
+                            mt: 2,
+                            display: 'flex',
+                            justifyContent: { xs: 'center', lg: 'flex-start' },
+                        }}>
+                        <img
+                            src={logo_gable}
+                            width="200px"
+                            className="neon-border"
+                            style={{
+                                maxWidth: '100%',
+                                height: '233px',
+                                borderRadius: '12px',
+                                padding: '16px',
+                                backgroundColor: 'rgba(255,255,255,0.05)',
+                            }}
+                            alt="G-Able Logo"
+                        />
+                    </Grid>
+
+                    <Grid data-aos="fade-left" data-aos-delay="0" size={{ xs: 12, lg: 7 }} marginLeft={2}>
+                        <Typography
+                            variant='h3'
+                            fontSize={{ xs: '1.5rem', sm: '2.5rem', md: '3rem' }}
+                            fontWeight={700}
+                            sx={{
+                                background: 'linear-gradient(90deg, #fff, #00cfff, #fff)',
+                                backgroundSize: '200% auto',
+                                backgroundClip: 'text',
+                                WebkitBackgroundClip: 'text',
+                                color: 'transparent',
+                                animation: 'shine 3s linear infinite',
+                                '@keyframes shine': {
+                                    '0%': { backgroundPosition: '200% center' },
+                                    '100%': { backgroundPosition: '0% center' },
+                                },
+                            }}
+                        >
+                            G-Able Public Company Limited
+                        </Typography>
+
+                        <Typography variant='h6' color='#AAA' fontWeight={400} fontSize={'0.95rem'} mt={1}>
+                            Full-Stack Developer (Internship) · ม.ค. 2026 – พ.ค. 2026
+                        </Typography>
+
+                        <Typography variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
+                            ผมมีประสบการณ์การฝึกงานจาก G-Able Public Company Limited
+                            ซึ่งเป็นบริษัท IT ชั้นนำของไทยในระยะเวลา 4 เดือน
+                            และได้สั่งสมประสบการณ์การทำงานจริงในระดับ Enterprise ดังนี้
+                            <br />• พัฒนา 8+ โมดูลหลักสำหรับระบบบริหารจัดการประกันภัยต่อและภาษี (Reinsurance & Tax Management) ด้วย Angular (TypeScript) และ Java (Spring Boot)
+                            <br />• ปรับปรุงประสิทธิภาพ SQL Query ด้วย Database Indexing
+                            <br />• แก้ไข Defect และ Improvement Task กว่า 180+ รายการภายใน 4 เดือน และส่งมอบงานให้ลูกค้าได้ตามกำหนด
+                            <br />• ประสานงานกับ Business Analyst เพื่อรวบรวม Requirements และแปลงเป็น Technical Solution
+                            <br />• ประสานงานกับทีม Cross-functional เพื่อขอเอกสาร API และแก้ไขปัญหาการ Integration
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Box my={6}></Box>
+
                 <Grid container spacing={10} >
                     <Grid data-aos="fade-right" data-aos-delay="0"
                         size={{ xs: 12, lg: 4 }}
@@ -77,6 +143,9 @@ function Experience() {
                             Unicorn Tech Integration
                         </Typography>
 
+                        <Typography variant='h6' color='#AAA' fontWeight={400} fontSize={'0.95rem'} mt={1}>
+                            AI Developer (Internship) · พ.ค. 2025 – ส.ค. 2025
+                        </Typography>
 
                         <Typography variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
                             ผมมีประสบการณ์การฝึกงานจาก Unicorn Tech Integration ซึ่งเป็นบริษัทเทคโนโลยีชั้นนำที่ทำงานร่วมกับ Villa Market ในระยะเวลา 3 เดือน (พฤษภาคม - สิงหาคม)
@@ -90,7 +159,7 @@ function Experience() {
                         </Typography>
                     </Grid>
                 </Grid>
-                
+
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Website - Detection Fake News Thailand
                 </Typography>
@@ -143,7 +212,7 @@ function Experience() {
 
                 <Typography variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} lineHeight={2} ml={2} data-aos="fade-right" data-aos-delay="100">
                     <br />• พัฒนาเว็บไซต์สำหรับตรวจสอบข่าวปลอม (Fake News) ในภาษาไทย
-                            โดยเฉพาะได้อย่างแม่นยำ โดยรองรับการตรวจสอบทั้งข้อความและลิงก์
+                    โดยเฉพาะได้อย่างแม่นยำ โดยรองรับการตรวจสอบทั้งข้อความและลิงก์
                     <br />• ใช้ทีมปัญญาประดิษฐ์ (AI Agents) ที่ทำงานประสานกันเป็นระบบ
                     <br />• พัฒนาเว็บไซต์โดยใช้เทคโนโลยี React.js สำหรับส่วนติดต่อผู้ใช้ (UI), Python (FastAPI) สำหรับเซิร์ฟเวอร์หลัก MongoDB จัดเก็บข้อมูล
                 </Typography>
@@ -492,7 +561,7 @@ function Experience() {
                         </Typography>
                     </Grid>
                 </Grid>
-                
+
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Foundations of Data Science
                 </Typography>
@@ -527,7 +596,7 @@ function Experience() {
 
 
 
-                
+
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Introduction of Front-End Development
                 </Typography>
