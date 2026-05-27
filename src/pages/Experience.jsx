@@ -17,6 +17,10 @@ import buz_1 from '../assets/images/buz-1.png'
 import buz_2 from '../assets/images/buz-2.png'
 import udetectionnews_1 from '../assets/images/UDetectionNews_1.png'
 import udetectionnews_2 from '../assets/images/UDetectionNews_2.png'
+import uwalletexpense_1 from '../assets/images/uwalletexpense_1.png'
+import uwalletexpense_2 from '../assets/images/uwalletexpense_2.png'
+import uwalletexpense_3 from '../assets/images/uwalletexpense_3.png'
+import uwalletexpense_4 from '../assets/images/uwalletexpense_4.png'
 import cybersecurity from '../assets/images/Certificate_1650706094_Warapob-1.png'
 import google from '../assets/images/google.png'
 import meta from '../assets/images/meta.png'
@@ -102,12 +106,12 @@ function Experience() {
                     <Grid data-aos="fade-right" data-aos-delay="0"
                         size={{ xs: 12, lg: 4 }}
                         sx={{
-                            ml: { xs: 0, lg: 10 }, // 👉 ml เฉพาะตอน md ขึ้นไป
+                            ml: { xs: 0, lg: 10 },
                             mt: 2,
                             display: 'flex',
                             justifyContent: {
-                                xs: 'center', // 👉 จัดกึ่งกลางตอน < md
-                                lg: 'flex-start' // 👉 ชิดซ้ายตาม ml ตอน ≥ md
+                                xs: 'center',
+                                lg: 'flex-start'
                             },
                         }}>
                         <img
@@ -160,6 +164,80 @@ function Experience() {
                     </Grid>
                 </Grid>
 
+                {/* ===== Senior Project: UWalletExpense ===== */}
+                <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
+                    Senior Project - UWalletExpense
+                </Typography>
+
+                <Grid container spacing={2}>
+
+
+                    <Grid size={{ xs: 12, md: 12 }} data-aos="fade-right" data-aos-delay="100">
+											<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', margin: '0 15px' }}>
+													<div className='border-animated-wrapper'>
+															<img src={uwalletexpense_4} width="100%" height="auto" style={{ height: 'auto' }} alt="UWalletExpense Role" />
+													</div>
+											</Box>
+											</Grid>
+									<Grid size={{ xs: 12, md: 12 }} data-aos="fade-up" data-aos-delay="150">
+											<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', margin: '0 15px' }}>
+													<div className='border-animated-wrapper'>
+															<img src={uwalletexpense_1} width="100%" height="auto" style={{ height: 'auto' }} alt="UWalletExpense Role" />
+													</div>
+											</Box>
+									</Grid>
+
+									<Grid size={{ xs: 12, md: 12 }} data-aos="fade-up" data-aos-delay="150">
+											<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', margin: '0 15px' }}>
+													<div className='border-animated-wrapper'>
+															<img src={uwalletexpense_2} width="100%" height="auto" style={{ height: 'auto' }} alt="UWalletExpense Users" />
+													</div>
+											</Box>
+									</Grid>
+
+									<Grid size={{ xs: 12, md: 12 }} data-aos="fade-left" data-aos-delay="200">
+											<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', margin: '0 15px' }}>
+													<div className='border-animated-wrapper'>
+															<img src={uwalletexpense_3} width="100%" height="auto" style={{ height: 'auto' }} alt="UWalletExpense Debt Management" />
+													</div>
+											</Box>
+									</Grid>
+                </Grid>
+{/* ===== ส่วนอธิบายเนื้อหาโปรเจกต์เวอร์ชันภาษาไทยแบบละเอียด ===== */}
+<Box sx={{ ml: 2, mt: 4 }} data-aos="fade-up" data-aos-delay="250">
+    
+    {/* สรุปภาพรวมโปรเจกต์ */}
+    <Typography variant='body1' color='#A0AEC0' fontSize={'1.1rem'} lineHeight={1.8} mb={3}>
+        พัฒนาโปรเจกต์แอปพลิเคชันเว็บ <strong>UWalletExpense</strong> ระบบบริหารจัดการทางการเงินส่วนบุคคล ค่าใช้จ่าย และหนี้สินแบบครบวงจร โดยเน้นการคำนวณทางการเงินที่แม่นยำและการควบคุมสิทธิ์เข้าถึงข้อมูลที่ปลอดภัยในระดับ Enterprise
+    </Typography>
+
+    {/* รายละเอียดเจาะลึกความรับผิดชอบและเชิงเทคนิค */}
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        
+        <Typography variant='body1' color='#FFF' fontSize={'1rem'} lineHeight={1.8}>
+            • <strong>โครงสร้างสถาปัตยกรรมแบบ Full-Stack:</strong> ออกแบบและพัฒนาระบบหน้าบ้านด้วย React.js เพื่อการแสดงผลที่ลื่นไหล ทำงานร่วมกับ Node.js / Express.js ในฝั่ง Back-End และบริหารจัดการฐานข้อมูลด้วย MySQL อย่างเป็นระบบ
+        </Typography>
+
+        <Typography variant='body1' color='#FFF' fontSize={'1rem'} lineHeight={1.8}>
+            • <strong>ระบบคำนวณและบริหารจัดการหนี้อัตโนมัติ (Automated Debt Engine):</strong> ออกแบบ Logic การคำนวณทางการเงินที่มีความซับซ้อน สามารถคำนวณดอกเบี้ย ค่าธรรมเนียม จัดการแบ่งงวดชำระ และสรุปยอดหนี้คงเหลือทั้งหมดให้สอดคล้องกันโดยอัตโนมัติ
+        </Typography>
+
+        <Typography variant='body1' color='#FFF' fontSize={'1rem'} lineHeight={1.8}>
+            • <strong>การจัดการสิทธิ์เข้าถึงข้อมูลระดับโมดูล (Granular RBAC):</strong> พัฒนาระบบ Authentication & Authorization ควบคุมสิทธิ์การเข้าถึงข้อมูลของผู้ใช้งานตามบทบาท (Role-Based Access Control) แยกสิทธิ์เด็ดขาดระหว่าง Admin, Senior Staff และ General Staff เพื่อความปลอดภัยขั้นสูง
+        </Typography>
+
+        <Typography variant='body1' color='#FFF' fontSize={'1rem'} lineHeight={1.8}>
+            • <strong>การจัดการสถาปัตยกรรมฐานข้อมูล (Database Schema & Integrity):</strong> ออกแบบความสัมพันธ์ของฐานข้อมูล (ER Diagram) และเขียนคำสั่ง SQL ให้มีประสิทธิภาพ รองรับ Data Flow ที่ซับซ้อนของการบันทึกรายรับ-รายจ่าย รายเดือน
+        </Typography>
+
+    </Box>
+
+    {/* แท็กแสดงเทคโนโลยีที่ใช้ */}
+    <Typography variant='body2' color='#63B3ED' fontSize={'0.95rem'} fontWeight={600} mt={4}>
+        Tech Stack: Angular.ts | Nest.js (Express) | MySQL | JavaScript/TypeScript | OOP | RESTful API
+    </Typography>
+</Box>
+
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Website - Detection Fake News Thailand
                 </Typography>
@@ -172,7 +250,7 @@ function Experience() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                height: '100%', // ทำให้ Box สูงเท่า Grid เพื่อจัดกลางแนวตั้ง
+                                height: '100%',
                                 margin: '0 15px'
                             }}
                         >
@@ -251,10 +329,10 @@ function Experience() {
                                 position: 'relative',
                                 display: 'flex',
                                 justifyContent: {
-                                    xs: 'center',  // ✅ จอเล็ก: ตรงกลาง
-                                    md: 'flex-end' // ✅ จอ md ขึ้นไป: ชิดขวา
+                                    xs: 'center',
+                                    md: 'flex-end'
                                 },
-                                pr: { xs: 0, md: 2 }, // padding ขวานิดหน่อยเมื่อเป็นจอใหญ่
+                                pr: { xs: 0, md: 2 },
                             }}
                         >
                             <div className="border-animated-n8n">
@@ -305,10 +383,10 @@ function Experience() {
                                 position: 'relative',
                                 display: 'flex',
                                 justifyContent: {
-                                    xs: 'center',  // ✅ จอเล็ก: ตรงกลาง
-                                    md: 'flex-end' // ✅ จอ md ขึ้นไป: ชิดขวา
+                                    xs: 'center',
+                                    md: 'flex-end'
                                 },
-                                pr: { xs: 0, md: 2 }, // padding ขวานิดหน่อยเมื่อเป็นจอใหญ่
+                                pr: { xs: 0, md: 2 },
                             }}
                         >
                             <div className="border-animated-n8n">
@@ -337,8 +415,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={brian_tumor}
                                 width="100%"
@@ -355,11 +431,9 @@ function Experience() {
                             fontWeight={600}
                             color='#FFF'
                             marginLeft={2}
-
                         >
                             Detection Brain Tumor MRI
                         </Typography>
-
 
                         <Typography marginLeft={2} variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
                             โปรเจคนี้มุ่งเน้นการพัฒนาโมเดล Deep Learning เพื่อจำแนกภาพ MRI ของสมองออกเป็น 4 คลาส เพื่อตรวจจับการมีเนื้องอกในสมอง วัตถุประสงค์หลักคือเพื่อช่วยในการตรวจพบเนื้องอกในสมองตั้งแต่ระยะเริ่มต้น ซึ่งจะเป็นประโยชน์ในด้านการวินิจฉัยทางการแพทย์
@@ -383,8 +457,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={face_idle}
                                 width="100%"
@@ -401,11 +473,9 @@ function Experience() {
                             fontWeight={600}
                             color='#FFF'
                             marginLeft={2}
-
                         >
                             Detection Face Idle
                         </Typography>
-
 
                         <Typography marginLeft={2} variant='h6' color='#FFF' fontWeight={300} fontSize={'1rem'} mt={2} lineHeight={2}>
                             โปรเจคนี้ใช้ Machine Learning ในการตรวจจับและจดจำใบหน้าของสมาชิกวง (G)I-DLE โดยใช้ SVM (Support Vector Machine) และ DeepFace เพื่อดึงคุณลักษณะจากใบหน้า
@@ -429,7 +499,7 @@ function Experience() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                height: '100%', // ทำให้ Box สูงเท่า Grid เพื่อจัดกลางแนวตั้ง
+                                height: '100%',
                                 margin: '0 15px'
                             }}
                         >
@@ -484,7 +554,7 @@ function Experience() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                height: '100%', // ทำให้ Box สูงเท่า Grid เพื่อจัดกลางแนวตั้ง
+                                height: '100%',
                                 margin: '0 15px'
                             }}
                         >
@@ -542,8 +612,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={cybersecurity}
                                 width="100%"
@@ -574,8 +642,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={google}
                                 width="100%"
@@ -594,9 +660,6 @@ function Experience() {
                     </Grid>
                 </Grid>
 
-
-
-
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Introduction of Front-End Development
                 </Typography>
@@ -609,8 +672,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={meta}
                                 width="100%"
@@ -628,6 +689,7 @@ function Experience() {
                         </Typography>
                     </Grid>
                 </Grid>
+
                 <Typography data-aos="fade-up" data-aos-delay="0" variant='h3' fontSize={{ xs: '1.4rem', sm: '1.8rem', md: '2.2rem' }} fontWeight={700} color='#FFF' mb={4} mt={12} ml={2}>
                     Certificate - Introduction to Artificial Intelligence (AI)
                 </Typography>
@@ -640,8 +702,6 @@ function Experience() {
 
                         }}>
                         <div className='border-animated-wrapper'>
-
-
                             <img
                                 src={IBM}
                                 width="100%"
