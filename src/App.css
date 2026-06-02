@@ -1,4 +1,4 @@
-@keyframes move {
+/* @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
@@ -262,4 +262,4 @@
     transform-origin: -20vw -22vh;
     box-shadow: 8vmin 0 1.5107652677425047vmin currentColor;
 }
-
+ */
