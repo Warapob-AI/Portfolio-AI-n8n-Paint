@@ -297,6 +297,37 @@ const CSS = `
   }
   .tl-img:hover { transform: scale(1.02); border-color: var(--cyan20); }
 
+  /* ── EXPERIENCE VIDEO ─────────────────── */
+  .tl-video-wrap {
+    margin-top: 1.1rem;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+    background: #000;
+		width: 40%;
+    transition: border-color .3s;
+  }
+  .tl-video-wrap:hover { border-color: var(--cyan20); }
+  .tl-video {
+    width: 100%; height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .tl-video-label {
+    display: inline-flex; align-items: center; gap: .4rem;
+    margin-top: .65rem;
+    font-size: .74rem; color: var(--muted); font-weight: 600;
+    letter-spacing: .06em;
+  }
+  .tl-video-label::before {
+    content: '';
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 6px var(--orange);
+    animation: bdot 2s ease-in-out infinite;
+  }
+
+  /* ── PROJECTS ────────────────────────── */
   .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
   .proj-card {
     background: var(--card); border: 1px solid var(--border);
@@ -309,15 +340,15 @@ const CSS = `
     box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 0 1px var(--cyan20);
   }
 
-  .proj-thumbs { 
-    display: flex; 
-    flex-direction: column; 
+  .proj-thumbs {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .proj-thumb {
-    width: 100%; 
+    width: 100%;
     height: auto;
     max-height: 250px;
     object-fit: cover;
@@ -326,7 +357,7 @@ const CSS = `
     transition: transform .45s ease;
   }
   .proj-card:hover .proj-thumb { transform: scale(1.02); }
-  .proj-body { padding: 1.5rem; }
+  .proj-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
   .proj-stack { display: flex; flex-wrap: wrap; gap: .38rem; margin-bottom: 1rem; }
   .ptag {
     padding: .22rem .6rem; border-radius: 5px;
@@ -336,50 +367,76 @@ const CSS = `
   .proj-title { font-size: 1.18rem; font-weight: 800; margin-bottom: .2rem; }
   .proj-sub { font-size: .78rem; color: var(--muted); margin-bottom: .7rem; }
   .proj-desc { font-size: .87rem; color: var(--muted); line-height: 1.72; margin-bottom: .9rem; }
-  .proj-ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+  .proj-ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.4rem; flex: 1; }
   .proj-ul li {
     font-size: .81rem; color: var(--muted); padding-left: .9rem;
     position: relative; line-height: 1.5;
   }
   .proj-ul li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); }
 
+  /* ── GITHUB LINKS ────────────────────── */
+  .proj-links {
+    display: flex; flex-wrap: wrap; gap: .6rem;
+    margin-top: auto; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .proj-gh-link {
+    display: inline-flex; align-items: center; gap: .45rem;
+    padding: .52rem 1.05rem; border-radius: 8px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font: 600 .78rem/1 var(--font);
+    text-decoration: none;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+  .proj-gh-link svg {
+    width: 14px; height: 14px; flex-shrink: 0;
+    fill: currentColor;
+  }
+  .proj-gh-link:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: var(--cyan10);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(34,211,238,.15);
+  }
+
   /* ── CERTS ───────────────────────────── */
-  /* ── CERTS (ปรับปรุงเป็นแบบ 2 Column แนวนอนคู่ขนาน) ── */
-  .cert-grid { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 1.8rem; 
+  .cert-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
     width: 100%;
   }
-  
+
   .cert-card {
-    background: var(--card); 
+    background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 18px; 
+    border-radius: 18px;
     padding: 2rem;
     display: grid;
-    grid-template-columns: 1.2fr 1.8fr; /* แบ่งเลย์เอาต์ ซ้าย: รูปภาพ / ขวา: ข้อความ */
+    grid-template-columns: 1.2fr 1.8fr;
     gap: 2.5rem;
     align-items: center;
     transition: all .32s ease;
     overflow: hidden;
   }
-  
-  .cert-card:hover { 
-    border-color: var(--cyan20); 
-    transform: translateY(-4px); 
+
+  .cert-card:hover {
+    border-color: var(--cyan20);
+    transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
-  
-  /* บล็อกหุ้มรูปภาพฝั่งซ้าย */
+
   .cert-left {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  /* ตัวรูปเกียรติบัตรใบใหญ่ */
+
   .cert-large-img {
     width: 100%;
     height: auto;
@@ -389,41 +446,35 @@ const CSS = `
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   }
-  
-  /* บล็อกข้อความรายละเอียดฝั่งขวา */
+
   .cert-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
-  .cert-name { 
-    font-size: 1.4rem; /* ขยายขนาดหัวข้อข้อความให้เด่นชัดคู่กับรูปใบใหญ่ */
-    font-weight: 800; 
-    line-height: 1.4; 
-    margin-bottom: 0.6rem; 
+
+  .cert-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
     color: var(--text);
   }
-  
-  .cert-org { 
-    font-size: 0.95rem; 
-    color: var(--muted); 
-    line-height: 1.6; 
+
+  .cert-org {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
   }
 
-  /* Responsive: สำหรับหน้าจอมือถือ/แท็บเล็ต จะยุบรวมกลับมาสแต็กแนวตั้ง */
   @media (max-width: 900px) {
     .cert-card {
       grid-template-columns: 1fr;
       gap: 1.5rem;
       padding: 1.5rem;
     }
-    .cert-large-img {
-      max-height: 200px;
-    }
-    .cert-name {
-      font-size: 1.15rem;
-    }
+    .cert-large-img { max-height: 200px; }
+    .cert-name { font-size: 1.15rem; }
   }
 
   /* ── CONTACT ─────────────────────────── */
@@ -516,11 +567,13 @@ const EXPERIENCE = [
     tech: "Angular · Java Spring Boot · MSSQL",
     color: "#22d3ee",
     points: [
-      "พัฒนา core modules สำหรับระบบ Reinsurance & Tax Management ขนาด Enterprise",
-      "แก้ปัญหา Memory Leak ด้วย proper Unsubscribe และเพิ่ม Loader Page ป้องกัน multiple-click ขณะ processing",
-      "ส่งมอบงานกว่า 170+ tasks ภายใน 4 เดือน ตรงตาม sprint schedule ทุก sprint",
-      "ประสานงานกับทีม BA แปล requirements เป็น technical solutions ได้อย่างแม่นยำ",
-      "ทำงานร่วมกับ QA briefing feature ใหม่เพื่อให้ทดสอบได้ครบถ้วน",
+      "พัฒนา core modules สำหรับระบบ Reinsurance & Tax Management ขนาด Enterprise ด้วย Angular + Java Spring Boot และ Microsoft SQL Server ซึ่งได้เรียนรู้เกี่ยวกับระบบประกันภัยและการจัดการภาษีในอุตสาหกรรมประกันภัยอย่างเข้มงวดและความซับซ้อนของ Logic ที่เกี่ยวข้อง",
+      "เขียนโค้ดด้วย best practices โดยเฉพาะ Object-Oriented Programming ขั้นสูงเนื่องจากต้องใช้ในภาษา Java และ Angular โดยเฉพาะ",
+			"แก้ปัญหา Memory Leak ด้วย proper Unsubscribe เนื่องจากการ Subscribe ในกรณี valueChange และกรณีอื่น ๆ อาจทำให้เกิด Memory Leak และเพิ่ม Loader Page ป้องกัน user multiple-click ขณะ processing",
+      "ส่งมอบงานกว่า 170+ tasks ภายใน 4 เดือน ตรงตาม sprint schedule ทุก sprint รวมถึงการแก้ไข bugs และปรับปรุง features ตาม feedback ของ QA และผู้ใช้งานจริง",
+      "ประสานงานกับทีม BA แปล requirements เป็น technical solutions ได้อย่างแม่นยำ รวมถึงซัพพอร์ต BA ในการทำ UAT testing และ setting up สำหรับการเทสให้ลูกค้า",
+      "ทำงานร่วมกับ QA briefing feature ใหม่เพื่อให้ทดสอบได้ครบถ้วน ในกรณีที่ QA ไม่เข้าใจ requirement หรือมีข้อสงสัยเกี่ยวกับ feature ที่พัฒนาขึ้นมา",
+			"เรียนรู้เรื่องการใช้ Git โดยเฉพาะการใช้ Rebase และ Cherry-pick เพื่อให้ commit history สะอาดและเข้าใจง่าย รวมถึงการแก้ไข merge conflicts ที่เกิดขึ้นระหว่างการพัฒนา",
     ],
     imgs: [],
   },
@@ -531,15 +584,16 @@ const EXPERIENCE = [
     tech: "n8n · Python · AutoGen · Streamlit",
     color: "#fb923c",
     points: [
-      "สร้าง AI Video Generation Workflow ด้วย n8n — ผลิต 230 คลิปใน 25 นาที จากเดิม 20 คลิป/วัน = เพิ่มขึ้น 220 เท่า",
+      "สร้าง AI Video Generation Workflow ด้วย n8n — ผลิต 230 คลิปใน 25 นาที จากเดิม 20 คลิป/วัน = เพิ่มขึ้น 220 เท่า โดยที่ได้คุยกับ CEO ของ Unicorn Tech Integration และ CTO ของ Villa Market เพื่อทำความเข้าใจ pain points และ requirement อย่างละเอียดก่อนเริ่มพัฒนา",
       "พัฒนา Internal LLM Chatbot ด้วย Python + Streamlit สำหรับค้นหาและจัดการข้อมูลพนักงานภายในองค์กร",
-      "ใช้ AutoGen Framework บริหาร Multi-Agent AI System ขับเคลื่อน process workflow automation",
-      "นำเสนอผลลัพธ์และ solution โดยตรงต่อทีมพัฒนาและผู้บริหารระดับสูงของ Villa Market",
+      "ใช้ AutoGen Framework บริหาร Multi-Agent AI System ขับเคลื่อน process workflow automation ",
+      "นำเสนอผลลัพธ์และ solution โดยตรงต่อทีมพัฒนาและผู้บริหารระดับสูงของ Villa Market โดยเฉพาะ CTO ของ Villa Market ซึ่งได้ให้ feedback ว่า solution ที่พัฒนาขึ้นมานั้นตอบโจทย์และมีประสิทธิภาพมากในการแก้ปัญหาที่พวกเขาเผชิญอยู่ และได้มีการพูดคุยถึง potential use cases อื่น ๆ ที่สามารถนำ AI ไปใช้ในองค์กรได้อีกด้วย",
     ],
     imgs: [
       "/images/n8n-experience-1.jpg",
       "/images/n8n-experience-2.jpg",
     ],
+    video: "/images/video-1.mp4",
   },
 ];
 
@@ -554,7 +608,11 @@ const PROJECTS = [
       "ออกแบบ reusable database layer สำหรับ CRUD operations ทั้งหมด ด้วย strict OOP",
       "โครงสร้าง NestJS ที่ใช้ซ้ำได้ทำให้ full-stack development เร็วและ consistent ขึ้นอย่างมาก",
     ],
-    imgs: ["/images/uwalletexpense_1.png", "/images/uwalletexpense_2.png"],
+    imgs: ["/images/uwalletexpense_1.png", "/images/uwalletexpense_2.png", "/images/uwalletexpense_3.png"],
+    links: [
+      { label: "UI (Frontend)", url: "https://github.com/Warapob-AI/UI-UWalletExpense" },
+      { label: "Service (Backend)", url: "https://github.com/Warapob-AI/Service-UWalletExpense" },
+    ],
   },
   {
     title: "UDetectionNews",
@@ -566,7 +624,10 @@ const PROJECTS = [
       "Frontend React เชื่อมต่อ Python FastAPI + LLM (Ollama) ผ่าน search engine system",
       "ออกแบบ UX ให้ใช้งานง่าย ผลลัพธ์ชัดเจน รองรับการตรวจสอบข่าวแบบ real-time",
     ],
-    imgs: ["/images/UDetectionNews_1.png", "/images/UDetectionNews_2.png"],
+    imgs: ["/images/UDetectionNews_1.png", "/images/UDetectionNews_3.png", "/images/UDetectionNews_2.png"],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/Warapob-AI/Fake-News-Detection-Machine-Learning-and-LLM" },
+    ],
   },
 ];
 
@@ -592,7 +653,7 @@ const CERTS = [
     org: "Meta Certificate (Coursera)",
     logo: "/images/meta.png",
   },
-	{
+  {
     name: "Introduction to Artificial Intelligence (AI)",
     org: "IBM Certificate (Coursera)",
     logo: "/images/IBM.png",
@@ -603,6 +664,15 @@ const CERTS = [
     logo: "/images/Certificate_1650706094_Warapob-1.png",
   },
 ];
+
+/* ─────────────────────────────────────────────
+   GitHub SVG Icon
+───────────────────────────────────────────── */
+const GithubIcon = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+);
 
 /* ─────────────────────────────────────────────
    HELPER: Image with gray-box fallback
@@ -623,7 +693,6 @@ export default function Portfolio() {
   const [shown, setShown] = useState(new Set());
 
   useEffect(() => {
-    // Font preconnects
     [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -654,8 +723,8 @@ export default function Portfolio() {
     };
   }, []);
 
-  const go   = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  const rv   = (id) => `reveal${shown.has(id) ? " shown" : ""}`;
+  const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const rv = (id) => `reveal${shown.has(id) ? " shown" : ""}`;
 
   const NAV_ITEMS = [
     ["about", "about"],
@@ -668,12 +737,9 @@ export default function Portfolio() {
 
   return (
     <>
-      {/* ── Global styles ── */}
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
-      {/* ════════════════════════════════
-          NAV
-      ════════════════════════════════ */}
+      {/* ── NAV ── */}
       <nav className={`pf-nav${scrolled ? " solid" : ""}`}>
         <div className="nav-brand" onClick={() => go("hero")}>Warapob Kawinrum</div>
         <ul className="nav-links">
@@ -685,21 +751,17 @@ export default function Portfolio() {
         </ul>
       </nav>
 
-      {/* ════════════════════════════════
-          HERO
-      ════════════════════════════════ */}
+      {/* ── HERO ── */}
       <section id="hero" className="pf-hero">
         <div className="hero-grid-bg" />
         <div className="hero-glow-r" />
         <div className="hero-glow-l" />
 
-        {/* Left: text */}
         <div className="hero-left">
           <div className="hero-badge">
             <span className="badge-dot" />
             Available for Opportunities
           </div>
-
           <h1 className="hero-name">
             <span className="hero-name-accent">วราภพ ควินรัมย์</span>
           </h1>
@@ -709,7 +771,6 @@ export default function Portfolio() {
             Enterprise-scale ที่ G-Able และสร้าง AI Developer ที่เพิ่ม productivity
             ได้จริงถึง 220 เท่าที่ Villa Market
           </p>
-
           <div className="hero-stats">
             <div>
               <span className="stat-val">170+</span>
@@ -724,7 +785,6 @@ export default function Portfolio() {
               <span className="stat-lbl">GPA</span>
             </div>
           </div>
-
           <div className="hero-btns">
             <button className="btn btn-fill" onClick={() => go("projects")}>
               ดูผลงาน →
@@ -735,7 +795,6 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Right: photo */}
         <div className="hero-right">
           <div className="photo-wrap">
             <div className="photo-ring" />
@@ -749,9 +808,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          ABOUT
-      ════════════════════════════════ */}
+      {/* ── ABOUT ── */}
       <section id="about" className="pf-sec alt">
         <div data-id="about" className={rv("about")}>
           <div className="s-eye">About me</div>
@@ -795,9 +852,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          WHAT I DO
-      ════════════════════════════════ */}
+      {/* ── WHAT I DO ── */}
       <section id="wid" className="pf-sec">
         <div data-id="wid" className={rv("wid")}>
           <div className="s-eye">What I Do</div>
@@ -813,9 +868,7 @@ export default function Portfolio() {
                 <div className="wid-desc">{w.desc}</div>
                 <div className="wid-tags">
                   {w.tags.map((t) => (
-                    <span key={t} className="wid-tag">
-                      {t}
-                    </span>
+                    <span key={t} className="wid-tag">{t}</span>
                   ))}
                 </div>
               </div>
@@ -824,12 +877,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          SKILLS
-      ════════════════════════════════ */}
+      {/* ── SKILLS ── */}
       <section id="skills" className="pf-sec alt">
         <div data-id="skills" className={rv("skills")}>
-          <div className="s-eye">ทักษะ</div>
+          <div className="s-eye">Skills</div>
           <h2 className="s-h">Tech Stack</h2>
           <p className="s-sub">
             เทคโนโลยีที่ผมใช้ในงานจริงทั้งระดับ Production และ AI Developer
@@ -840,9 +891,7 @@ export default function Portfolio() {
                 <div className="skill-grp-name">{cat}</div>
                 <div className="skill-tags">
                   {tags.map((t) => (
-                    <span key={t} className="stag">
-                      {t}
-                    </span>
+                    <span key={t} className="stag">{t}</span>
                   ))}
                 </div>
               </div>
@@ -851,9 +900,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          EXPERIENCE
-      ════════════════════════════════ */}
+      {/* ── EXPERIENCE ── */}
       <section id="experience" className="pf-sec">
         <div data-id="experience" className={rv("experience")}>
           <div className="s-eye">Experience</div>
@@ -886,18 +933,30 @@ export default function Portfolio() {
                     ))}
                   </div>
                 )}
+                {ex.video && (
+                  <div>
+                    <div className="tl-video-wrap">
+                      <video
+                        className="tl-video"
+                        src={ex.video}
+                        controls
+                        playsInline
+                        preload="metadata"
+                      />
+                    </div>
+                    <div className="tl-video-label">Demo · AI Video Generation Workflow</div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          PROJECTS
-      ════════════════════════════════ */}
+      {/* ── PROJECTS ── */}
       <section id="projects" className="pf-sec alt">
         <div data-id="projects" className={rv("projects")}>
-          <div className="s-eye">ผลงาน</div>
+          <div className="s-eye">Projects</div>
           <h2 className="s-h">Senior Projects</h2>
           <p className="s-sub">
             โปรเจคที่พัฒนาด้วยตัวเองตั้งแต่ออกแบบ Architecture จนถึงระบบที่ใช้งานได้จริง
@@ -913,9 +972,7 @@ export default function Portfolio() {
                 <div className="proj-body">
                   <div className="proj-stack">
                     {p.stack.map((s) => (
-                      <span key={s} className="ptag">
-                        {s}
-                      </span>
+                      <span key={s} className="ptag">{s}</span>
                     ))}
                   </div>
                   <div className="proj-title">{p.title}</div>
@@ -926,6 +983,23 @@ export default function Portfolio() {
                       <li key={j}>{pt}</li>
                     ))}
                   </ul>
+                  {/* ── GitHub Links ── */}
+                  {p.links && p.links.length > 0 && (
+                    <div className="proj-links">
+                      {p.links.map((lnk, j) => (
+                        <a
+                          key={j}
+                          className="proj-gh-link"
+                          href={lnk.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <GithubIcon />
+                          {lnk.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -933,9 +1007,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          CERTIFICATES
-       ════════════════════════════════ */}
+      {/* ── CERTIFICATES ── */}
       <section id="certs" className="pf-sec">
         <div data-id="certs" className={rv("certs")}>
           <div className="s-eye">Successfully</div>
@@ -960,8 +1032,6 @@ export default function Portfolio() {
                     </div>
                   )}
                 </div>
-
-                {/* ฝั่งขวา: ข้อความรายละเอียดความสำเร็จ */}
                 <div className="cert-right">
                   <div className="cert-name">{c.name}</div>
                   <div className="cert-org">{c.org}</div>
@@ -972,56 +1042,28 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          CONTACT
-      ════════════════════════════════ */}
+      {/* ── CONTACT ── */}
       <section id="contact" className="pf-sec alt">
         <div data-id="contact" className={rv("contact")}>
           <div className="contact-wrap">
-            <div className="s-eye" style={{ justifyContent: "center" }}>
-              ติดต่อ
-            </div>
-            <h2 className="s-h" style={{ textAlign: "center" }}>
-              มาทำงานด้วยกัน
-            </h2>
+            <div className="s-eye" style={{ justifyContent: "center" }}>ติดต่อ</div>
+            <h2 className="s-h" style={{ textAlign: "center" }}>มาทำงานด้วยกัน</h2>
             <p className="contact-desc">
               ผมกำลังมองหาโอกาสใหม่ — ทั้งงาน Full-Stack Development และ AI Developer
               หากคุณมีโปรเจคที่น่าสนใจหรืออยากพูดคุย ติดต่อมาได้เลย
             </p>
             <div className="clinks">
-              <a className="clink" href="mailto:paintseason158@gmail.com">
-                📧 paintseason158@gmail.com
-              </a>
-              <a className="clink" href="tel:0961519706">
-                📱 096-151-9706
-              </a>
-              <a
-                className="clink"
-                href="https://github.com/Warapob-AI"
-                target="_blank"
-                rel="noreferrer"
-              >
-                🐙 GitHub: Warapob-AI
-              </a>
-              <a
-                className="clink"
-                href="https://www.linkedin.com/in/warapob-kawinrum-8b33b3357/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                💼 LinkedIn
-              </a>
-              <a className="clink" href="#">
-                💬 Line: warapobai
-              </a>
+              <a className="clink" href="mailto:paintseason158@gmail.com">📧 paintseason158@gmail.com</a>
+              <a className="clink" href="tel:0961519706">📱 096-151-9706</a>
+              <a className="clink" href="https://github.com/Warapob-AI" target="_blank" rel="noreferrer">🐙 GitHub: Warapob-AI</a>
+              <a className="clink" href="https://www.linkedin.com/in/warapob-kawinrum-8b33b3357/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+              <a className="clink" href="#">💬 Line: warapobai</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════
-          FOOTER
-      ════════════════════════════════ */}
+      {/* ── FOOTER ── */}
       <footer className="pf-footer">
         <span>© 2026 Warapob Kawinrum</span>
         <span className="footer-brand">Full-Stack Development &amp; AI Developer</span>
