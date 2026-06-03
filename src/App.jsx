@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './App.css';
 
-import Home from './pages/Home.jsx';
+import Home from './pages/Portfolio.jsx';
 
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-      <div id="home"><Home onStartClick={scrollToAbout} /></div>
+      <div id="Portfolio"><Home onStartClick={scrollToAbout} /></div>
   );
 }
 
