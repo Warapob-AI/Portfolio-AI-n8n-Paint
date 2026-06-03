@@ -208,7 +208,7 @@ const EXPERIENCE = {
         { src: "/images/n8n-experience-video.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
         { src: "/images/n8n-experience-ocr.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
       ],
-      video: "/images/video-1.mp4",
+      video: "/images/n8n-experience-video.mp4",
     },
     {
       period: "Jun 2023 – Jan 2025",
@@ -270,7 +270,7 @@ const PROJECTS = {
         { src: "/images/UDetectionNews_2.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
       ],
       links: [
-        { label: "GitHub Repository", url: "https://github.com/Warapob-AI/Fake-News-Detection-Machine-Learning-and-LLM" },
+        { label: "UI & Service", url: "https://github.com/Warapob-AI/Fake-News-Detection-Machine-Learning-and-LLM" },
       ],
     },
   ],
