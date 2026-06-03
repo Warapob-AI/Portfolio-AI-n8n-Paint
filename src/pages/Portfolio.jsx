@@ -149,10 +149,8 @@ const EXPERIENCE = {
         "นำเสนอผลลัพธ์โดยตรงต่อ CTO ของ Villa Market ซึ่งให้ feedback ว่า solution ตอบโจทย์และมีประสิทธิภาพสูง",
       ],
       imgs: [
-        { src: "/images/n8n-experience-video.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/n8n-experience-ocr.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-      ],
-      video: "/images/n8n-experience-video.mp4",
+				{ src: "/images/G-Able-C.png" }
+			],
     },
     {
       period: "มิ.ย. 2566 – ม.ค. 2568",
@@ -190,7 +188,9 @@ const EXPERIENCE = {
         "Briefed QA on new features to ensure thorough test coverage.",
         "Learned and applied Git Rebase and Cherry-pick to maintain clean commit history and resolve merge conflicts.",
       ],
-      imgs: [],
+      imgs: [
+				{ src: "/images/G-Able-C.png" }
+			],
     },
     {
       period: "May 2025 – Aug 2025",
@@ -205,8 +205,8 @@ const EXPERIENCE = {
         "Presented results directly to Villa Market's CTO, who confirmed the solution was highly effective and explored further use cases.",
       ],
       imgs: [
-        { src: "/images/n8n-experience-video.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/n8n-experience-ocr.jpg", style: { width: "90%", height: "auto", objectFit: "cover", objectPosition: "center" } },
+        { src: "/images/n8n-experience-video.jpg" },
+        { src: "/images/n8n-experience-ocr.jpg" },
       ],
       video: "/images/n8n-experience-video.mp4",
     },
@@ -256,7 +256,7 @@ const PROJECTS = {
     },
     {
       title: "UDetectionNews",
-      sub: "ตรวจจับข่าวปลอม — ประเทศไทย",
+      sub: "เว็บไซต์ตรวจจับข่าวปลอมแห่งประเทศไทย",
       stack: ["React", "Python", "Ollama"],
       desc: "ระบบตรวจจับข่าวปลอมในประเทศไทยด้วย LLM + Search Engine วิเคราะห์และทำนายข่าวได้อย่างรวดเร็วและแม่นยำ",
       points: [
@@ -297,7 +297,7 @@ const PROJECTS = {
     },
     {
       title: "UDetectionNews",
-      sub: "Fake News Detection — Thailand",
+      sub: "Website for Fake News Detection in Thailand",
       stack: ["React", "Python", "Ollama"],
       desc: "A fake news detection system for Thailand powered by LLM + Search Engine, analyzing and predicting news quickly and accurately.",
       points: [
