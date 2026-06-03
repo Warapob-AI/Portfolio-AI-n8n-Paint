@@ -134,7 +134,9 @@ const EXPERIENCE = {
         "ทำงานร่วมกับ QA briefing feature ใหม่เพื่อให้ทดสอบได้ครบถ้วน",
         "เรียนรู้การใช้ Git Rebase และ Cherry-pick เพื่อให้ commit history สะอาดและแก้ไข merge conflicts",
       ],
-      imgs: [],
+      imgs: [
+				{ src: "/images/G-Able-C.png" }
+			],
     },
     {
       period: "พ.ค. 2568 – ส.ค. 2568",
@@ -149,8 +151,10 @@ const EXPERIENCE = {
         "นำเสนอผลลัพธ์โดยตรงต่อ CTO ของ Villa Market ซึ่งให้ feedback ว่า solution ตอบโจทย์และมีประสิทธิภาพสูง",
       ],
       imgs: [
-				{ src: "/images/G-Able-C.png" }
-			],
+        { src: "/images/n8n-experience-video.jpg"},
+        { src: "/images/n8n-experience-ocr.jpg" },
+      ],
+      video: "/images/n8n-experience-video.mp4",
     },
     {
       period: "มิ.ย. 2566 – ม.ค. 2568",
@@ -165,10 +169,10 @@ const EXPERIENCE = {
         "โครงการได้รับทุนสนับสนุนจาก depa จำนวน 80,000 บาท",
       ],
       imgs: [
-        { src: "/images/buz-1.png", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/buz-2.png", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/pat-dab.jpg", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/pat-dab-2.jpg", style: { width: "50%", height: "auto", objectFit: "cover", objectPosition: "center" } },
+        { src: "/images/buz-1.png" },
+        { src: "/images/buz-2.png" },
+        { src: "/images/pat-dab.jpg" },
+        { src: "/images/pat-dab-2.jpg" },
       ],
     },
   ],
@@ -223,10 +227,10 @@ const EXPERIENCE = {
         "The project received ฿80,000 in funding from depa.",
       ],
       imgs: [
-        { src: "/images/buz-1.png", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/buz-2.png", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/pat-dab.jpg", style: { width: "70%", height: "auto", objectFit: "cover", objectPosition: "center" } },
-        { src: "/images/pat-dab-2.jpg", style: { width: "50%", height: "auto", objectFit: "cover", objectPosition: "center" } },
+        { src: "/images/buz-1.png" },
+        { src: "/images/buz-2.png" },
+        { src: "/images/pat-dab.jpg" },
+        { src: "/images/pat-dab-2.jpg" },
       ],
     },
   ],
