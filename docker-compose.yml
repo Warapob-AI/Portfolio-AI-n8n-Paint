@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  uportfolio:
+    build: .
+    container_name: uportfolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped

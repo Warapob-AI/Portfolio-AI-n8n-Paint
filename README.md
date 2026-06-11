@@ -1,12 +1,77 @@
-# React + Vite
+# Web Portfolio - วราภพ ควินรัมย์ (Warapob Kawinrum)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+สวัสดีครับ! ยินดีต้อนรับเข้าสู่คลังเก็บโค้ดเว็บ Portfolio ของผม เว็บนี้ผมตั้งใจทำขึ้นมาเพื่อรวบรวมประวัติการทำงาน ทักษะด้านการพัฒนาซอฟต์แวร์ และโปรเจกต์ต่าง ๆ ที่ผมออกแบบและพัฒนาขึ้นมาเองทั้งหมด
 
-Currently, two official plugins are available:
+ตัวเว็บเขียนด้วย **React + Vite** และจัดการสไตล์ทั้งหมดด้วย **Vanilla SCSS** (ผมตั้งใจไม่พึ่งพา CSS Framework สำเร็จรูปอย่าง Tailwind หรือ Bootstrap เลย เพื่อความอิสระในการออกแบบระบบ UI ธีมมืดแนว Glassmorphism ให้ลื่นไหล ดูพรีเมียม และควบคุมเลย์เอาต์ได้เอง 100%)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔥 ไฮไลท์ประสบการณ์การทำงานจริง (สิ่งที่ผมทำลงไป)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ในพาร์ทประสบการณ์การทำงานจริง โดยเฉพาะช่วงที่ทำทีมพัฒนาระบบระดับ Enterprise นี่คือผลงานหลักๆ ครับ:
+
+### 💼 ระบบ Reinsurance & Tax Management ขนาด Enterprise (ที่ G-Able)
+ผมรับบทบาทเป็น Full Stack Developer เข้าไปลุยโปรเจกต์ระดับองค์กรใหญ่:
+* **พัฒนาระบบและฟีเจอร์อย่างต่อเนื่อง:** เขียนระบบ Reinsurance & Tax Management ด้วย React + Java
+* **ดูแลและปรับปรุงประสิทธิภาพระบบ (Optimization):** คอยทำ Code Optimization และทำ Database Performance Tuning บน MSSQL เพื่อรีดประสิทธิภาพให้ตอบสนองเร็วที่สุด
+* **ร่วมมือกับทีมส่งมอบงาน:** ประสานงานใกล้ชิดกับทีมนักพัฒนา, BA และ QA เพื่อแก้ปัญหาทางเทคนิคและส่งมอบฟังก์ชันต่างๆ ได้เสร็จตามกำหนด sprint เสมอ
+* **งานท้าทายหลัก - "Legacy Revamp":** 
+  * หน้าที่หลักคือการรื้อระบบเก่าแก่ที่มีอายุกว่า 30 ปี เพื่อเปลี่ยนผ่านมาเป็น Stack ยุคใหม่ (React + Java) 
+  * โดยโปรเจกต์นี้เราใช้ AI เข้ามาช่วยผันเปลี่ยนและแปลงโค้ดจากภาษาเก่าโบราณ
+  * **แต่ความจริงคือ AI ยังมีข้อบกพร่องอยู่เยอะมากในการทำงานประเภทนี้** เช่น แปลงตรรกะเพี้ยนหรือพ่นโค้ดที่รันไม่ได้จริง ผมจึงต้องคอยทำ Code Review อย่างละเอียดและเข้มงวดมาก เพื่อตรวจจับข้อบกพร่องและไล่ปรับแก้ logic ให้ระบบทำงานได้อย่างถูกต้อง 100%
+
+---
+
+## 💡 จุดเด่นในโค้ดของโปรเจกต์ Portfolio นี้ (ที่อยากโชว์ให้แงะดู)
+
+หากคุณกำลังเข้ามาดูโค้ดใน GitHub นี้ นี่คือส่วนสำคัญที่ผมเขียนขึ้นมาเองเพื่อให้เว็บพิเศษกว่างานทั่วๆ ไป:
+
+### 1. ระบบพรีวิวรูปภาพแบบซูม/ลากได้เอง (Custom React Zoom & Drag Modal)
+ผมเขียนระบบพรีวิวรูปภาพ (สำหรับดูเกียรติบัตรและ Screenshot ผลงาน) ขึ้นมาเองแบบ Pure React โดยไม่พึ่งไลบรารีภายนอกเลย:
+* **Zoom & Pan:** ใช้ Scroll Wheel ของเมาส์ซูมเข้า-ออก หรือกดปุ่มคอนโทรลเพื่อปรับขนาดรูปได้ละเอียดถึง 5 เท่า
+* **Drag-to-Pan:** เมื่อซูมภาพแล้ว สามารถคลิกแล้วลากเมาส์ (หรือใช้นิ้วปัดบนจอมือถือ) เพื่อเลื่อนดูจุดต่างๆ ของรูปได้ลื่นไหล ไม่ติดขัด
+* **Animations & Lifecycle:** ใส่คีย์เฟรมอนิเมชันเปิดตัวแบบเด้งนุ่มนวล (Scale & Fade In) และตอนกดปิดระบบจะหน่วงเวลา 250ms ผ่าน `setTimeout` ใน React เพื่อให้รูปค่อยๆ เฟดและหดตัวกลับไป (Fade Out & Scale Down) ก่อนที่ Component จะถูกถอดออกจริง (ไม่ปุ๊บปั๊บหายไปดื้อๆ)
+
+### 2. Docker Ready & Nginx Multi-Stage Build
+ตัวโปรเจกต์รองรับ Docker เต็มรูปแบบ มีการแบ่งขั้นตอน Build ชัดเจนใน `Dockerfile`:
+* **Stage 1 (Build):** ใช้ Node.js เพื่อคอมไพล์โค้ด React ออกมาเป็น Static Assets คุณภาพสูง
+* **Stage 2 (Production):** ใช้ Nginx Alpine (ขนาดเบาหวิว) เพื่อเสิร์ฟไฟล์ผ่านเว็บเซิร์ฟเวอร์โดยตรง รันไวและประหยัดทรัพยากรมาก
+
+### 3. SEO & Open Graph Tags แบบจัดเต็ม
+ตั้งค่าระบบ Metadata ไว้พร้อมสำหรับการสแกนของ Search Engine (SEO) และพร้อมแชร์ต่อ:
+* เขียน meta tags, Open Graph และ Twitter Cards ไว้สมบูรณ์แบบ เวลาเอาลิงก์ Portfolio นี้ไปแชร์บน LinkedIn, Facebook หรือ Twitter จะแสดงรูปภาพการ์ด ตัวอย่างโปรเจกต์ และข้อมูลเบื้องต้นอย่างสวยงามและมีความเป็นมืออาชีพ
+
+### 4. Responsive Layout (80% Desktop / 100% Mobile)
+ปรับโครงสร้าง SCSS ให้ฉลาดและสบายตา:
+* บนมือถือ การ์ดผลงานและเนื้อหาต่างๆ จะขยายกว้างเต็ม 100% เพื่อให้อ่านง่าย
+* บนหน้าจอเดสก์ท็อปใหญ่ๆ จะบีบเนื้อหาเหลือ 80% และจับกึ่งกลางหน้าจอ (`margin: 0 auto;`) เพื่อไม่ให้ตัวหนังสือแผ่กว้างเกินสายตาจนอ่านยาก
+
+---
+
+## 📂 โปรเจกต์อื่นๆ ที่ใส่ไว้ใน Portfolio
+นอกจากงานหลักกับองค์กรแล้ว ยังมีโปรเจกต์ส่วนตัวที่ผมทำขึ้นมาแบบ End-to-End ครับ:
+* **UWalletExpense** (Angular + Nest.js + PostgreSQL) — ระบบจัดการการเงินส่วนตัวและพอร์ตหุ้น เน้นการออกแบบ reusable database layer ด้วย OOP และแต่ง Frontend component library ขึ้นมาใช้เอง
+* **UFileConvert** (React + Vite + WebAssembly + Docker) — เว็บจัดการไฟล์ PDF แบบ Client-Side 100% ไม่ส่งไฟล์ขึ้นเซิร์ฟเวอร์ข้างนอก ทำให้ปลอดภัยเรื่องข้อมูลส่วนตัวสูงมาก ใช้ WebAssembly ในการจัดการการถอดรหัสเอกสาร
+* **UDetectionNews** (React + Python + Ollama) — เว็บเช็กข่าวปลอมของไทย เชื่อมต่อ AI/LLM แบบออฟไลน์และวิเคราะห์ข้อมูลผ่าน search engine
+
+---
+
+## 🚀 วิธีเอาไปรันลองเล่นในเครื่องคุณ
+
+### 1. วิธีรันปกติ (Local Dev)
+1. ติดตั้ง dependencies:
+   ```bash
+   npm install
+   ```
+2. รัน Developer Server:
+   ```bash
+   npm run dev
+   ```
+   *เปิดบราวเซอร์ดูที่: `http://localhost:5173`*
+
+### 2. วิธีรันผ่าน Docker (แนะนำและง่ายสุด)
+รัน Docker Compose เพื่อสร้างอิมเมจและสตาร์ทตู้เสิร์ฟเว็บผ่าน Nginx:
+```bash
+docker compose up -d --build
+```
+*เข้าเล่นเว็บได้ทันทีผ่านพอร์ต 8080: `http://localhost:8080`*

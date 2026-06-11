@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Portfolio.scss";
 
 const T = {
@@ -20,8 +20,14 @@ const T = {
     aboutP1: <>ผมคือ <strong>วราภพ ควินรัมย์</strong> — Full-Stack Developer และ AI Developer จบเกียรตินิยมอันดับ 1 สาขาวิทยาการคอมพิวเตอร์ (คณะเทคโนโลยีสารสนเทศและนวัตกรรม) จากมหาวิทยาลัยกรุงเทพด้วย GPA 3.70</>,
     aboutP2: <>มีประสบการณ์ฝึกงานจริง 2 ที่ระดับ Enterprise — ที่ <strong style={{ color: "#22d3ee" }}>G-Able</strong> พัฒนาระบบประกันภัยและการจัดการระบบภาษีขนาดใหญ่ ด้วย Angular + Java Spring Boot และที่ <strong style={{ color: "#fb923c" }}>Villa Market</strong> สร้าง AI Workflow ที่เพิ่ม productivity ได้ 220 เท่าภายใน 25 นาที</>,
     aboutP3: "ความถนัดของผมอยู่ที่การออกแบบระบบเบื้องต้นได้ เขียน clean code, optimize และนำ AI มาแก้ปัญหาธุรกิจได้จริง — ไม่ใช่แค่ demo",
-    eduSchool: "มหาวิทยาลัยกรุงเทพ — เกียรตินิยมอันดับ 1",
+    eduSchool: "เกียรตินิยมอันดับ 1 ที่มหาวิทยาลัยกรุงเทพ",
     eduDetail: "สาขาวิทยาการคอมพิวเตอร์ (คณะเทคโนโลยีสารสนเทศและนวัตกรรม) · GPA 3.70 · 2022–2026",
+    aboutInternship: "ฝึกงานที่ Unicorn Tech Integration × Villa Market",
+    aboutInternshipDetail: "AI Developer · พ.ค. 2568 – ส.ค. 2568",
+    aboutGablePartTime: "Full Stack Developer ที่ G-Able (Part-time)",
+    aboutGablePartTimeDetail: "ม.ค. 2569 – พ.ค. 2569",
+    aboutGableOutsource: "Full Stack Developer ที่ G-Able (Outsource)",
+    aboutGableOutsourceDetail: "มิ.ย. 2569 – ธ.ค. 2569",
 
     widEye: "สิ่งที่ทำ",
     widH: "ความเชี่ยวชาญหลัก",
@@ -66,8 +72,14 @@ const T = {
     aboutP1: <>I'm <strong>Warapob Kawinrum</strong> — a Full-Stack Developer and AI Developer who graduated with First-Class Honors in Computer Science (IT &amp; Innovation) from Bangkok University with a GPA of 3.70.</>,
     aboutP2: <>I have real-world experience from 2 Enterprise-level internships — at <strong style={{ color: "#22d3ee" }}>G-Able</strong>, building a Reinsurance &amp; Tax Management system with Angular + Java Spring Boot, and at <strong style={{ color: "#fb923c" }}>Villa Market</strong>, creating an AI Workflow that boosted productivity 220× in under 25 minutes.</>,
     aboutP3: "My strength lies in designing systems from the ground up, writing clean code, optimizing performance, and applying AI to solve real business problems — not just demos.",
-    eduSchool: "Bangkok University — First-Class Honors",
+    eduSchool: "First-Class Honors at Bangkok University",
     eduDetail: "B.Sc. Computer Science (IT & Innovation) · GPA 3.70 · 2022–2026",
+    aboutInternship: "Internship at Unicorn Tech Integration × Villa Market",
+    aboutInternshipDetail: "AI Developer · May 2025 – Aug 2025",
+    aboutGablePartTime: "Full Stack Developer at G-Able (Part-time)",
+    aboutGablePartTimeDetail: "Jan 2026 – May 2026",
+    aboutGableOutsource: "Full Stack Developer at G-Able (Outsource)",
+    aboutGableOutsourceDetail: "Jun 2026 – Dec 2026",
 
     widEye: "What I Do",
     widH: "Core Expertise",
@@ -120,9 +132,20 @@ const WHAT_I_DO = {
 const EXPERIENCE = {
   th: [
     {
+      period: "มิ.ย. 2569 – ธ.ค. 2569",
+      company: "G-Able Public Company Limited",
+      role: "Full Stack Developer (Outsource)",
+      tech: "React · Java · MSSQL",
+      color: "#22d3ee",
+      points: [
+        "ทำการ Revamp ระบบดั้งเดิมที่มีอายุกว่า 30 ปี โดยเปลี่ยนผ่านจาก Tech Stack เก่ามาเป็น React และ Java ที่ทันสมัยมากกว่าเดิม",
+        "ทำโดยพึ่งพาการใช้ AI ช่วยแปลงโค้ด และทำการตรวจสอบรีวิวโค้ดอย่างละเอียดเนื่องจาก AI ยังมีข้อบกพร่องในตอนที่ทำการผันเปลี่ยนโค้ด",
+      ],
+    },
+    {
       period: "ม.ค. 2569 – พ.ค. 2569",
       company: "G-Able Public Company Limited",
-      role: "Full Stack Developer (ฝึกงาน)",
+      role: "Full Stack Developer (Part-time)",
       tech: "Angular · Java Spring Boot · MSSQL",
       color: "#22d3ee",
       points: [
@@ -135,8 +158,8 @@ const EXPERIENCE = {
         "เรียนรู้การใช้ Git Rebase และ Cherry-pick เพื่อให้ commit history สะอาดและแก้ไข merge conflicts",
       ],
       imgs: [
-				{ src: "/images/G-Able-C.png" }
-			],
+        { src: "/images/G-Able-C.png" }
+      ],
     },
     {
       period: "พ.ค. 2568 – ส.ค. 2568",
@@ -178,9 +201,20 @@ const EXPERIENCE = {
   ],
   en: [
     {
+      period: "Jun 2026 – Dec 2026",
+      company: "G-Able Public Company Limited",
+      role: "Full Stack Developer (Outsource)",
+      tech: "React · Java · MSSQL",
+      color: "#22d3ee",
+      points: [
+        "Revamped a 30+ year old legacy system, migrating it to React or a modern tech stack.",
+        "Leveraged AI for code conversion combined with strict manual code reviews to correct AI bugs and logic flaws in the transition.",
+      ],
+    },
+    {
       period: "Jan 2026 – May 2026",
       company: "G-Able Public Company Limited",
-      role: "Full Stack Developer Intern",
+      role: "Full Stack Developer (Part-time)",
       tech: "Angular · Java Spring Boot · MSSQL",
       color: "#22d3ee",
       points: [
@@ -193,8 +227,8 @@ const EXPERIENCE = {
         "Learned and applied Git Rebase and Cherry-pick to maintain clean commit history and resolve merge conflicts.",
       ],
       imgs: [
-				{ src: "/images/G-Able-C.png" }
-			],
+        { src: "/images/G-Able-C.png" }
+      ],
     },
     {
       period: "May 2025 – Aug 2025",
@@ -277,6 +311,25 @@ const PROJECTS = {
         { label: "UI & Service", url: "https://github.com/Warapob-AI/Fake-News-Detection-Machine-Learning-and-LLM" },
       ],
     },
+    {
+      title: "UFileConvert",
+      sub: "เว็บจัดการไฟล์ PDF ทำงานบนบราวเซอร์ทั้งหมด (Client-Side)",
+      stack: ["React", "Vite", "WebAssembly", "Docker"],
+      desc: "ระบบจัดการไฟล์ PDF ทำงานบนบราวเซอร์ของผู้ใช้โดยตรง 100% ไฟล์ไม่ถูกส่งขึ้นเซิร์ฟเวอร์ภายนอก ปลอดภัยเรื่องข้อมูลส่วนตัว ดีไซน์ใช้ธีมมืดแนวกระจก (Glassmorphism)",
+      points: [
+        "แก้ไข PDF สามารถพิมพ์ข้อความทับลงบน PDF เลือกฟอนต์ มีกระดานเซ็นชื่อแบบกว้าง และเขียน/วาดรูปเส้นตรงได้โดยตรง",
+        "รวมไฟล์ PDF สามารถลากไฟล์ PDF หลายไฟล์มาจัดเรียงลำดับหน้าใหม่ก่อนกดบันทึกรวมเป็นไฟล์เดียว",
+        "แปลง PDF เป็นรูปภาพ & บีบอัด PDF สามารถแปลงหน้าเป็นรูปภาพ PNG/JPEG/WebP สูงสุด 300 DPI หรือบีบอัดไฟล์โดยการปรับ DPI",
+      ],
+      imgs: [
+        { src: "/images/UFileConvert_1.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+        { src: "/images/UFileConvert_2.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+        { src: "/images/UFileConvert_3.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+      ],
+      links: [
+        { label: "GitHub Repository", url: "https://github.com/Warapob-AI/UFileConvert" },
+      ],
+    },
   ],
   en: [
     {
@@ -318,6 +371,25 @@ const PROJECTS = {
         { label: "GitHub Repository", url: "https://github.com/Warapob-AI/Fake-News-Detection-Machine-Learning-and-LLM" },
       ],
     },
+    {
+      title: "UFileConvert",
+      sub: "Client-Side Browser-Based PDF Management Tools",
+      stack: ["React", "Vite", "WebAssembly", "Docker"],
+      desc: "A browser-based PDF utility tool that runs 100% client-side. No files are uploaded to external servers, ensuring total privacy. Designed with a dark glassmorphism UI.",
+      points: [
+        "PDF Editor with Write text over PDF with font options, draw directly, and use a wide signature pad.",
+        "PDF Merger with Drag-and-drop to reorder and merge multiple PDF files instantly.",
+        "PDF Converter & Compressor with Convert pages to PNG/JPEG/WebP (up to 300 DPI) and compress PDF size via image quality adjustment.",
+      ],
+      imgs: [
+        { src: "/images/UFileConvert_1.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+        { src: "/images/UFileConvert_2.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+        { src: "/images/UFileConvert_3.png", style: { height: "250px", objectFit: "cover", objectPosition: "top center" } },
+      ],
+      links: [
+        { label: "GitHub Repository", url: "https://github.com/Warapob-AI/UFileConvert" },
+      ],
+    },
   ],
 };
 
@@ -346,18 +418,107 @@ const GithubIcon = () => (
   </svg>
 );
 
-function Img({ src, alt, className, style }) {
+function Img({ src, alt, className, style, onClick }) {
   const fallback = (e) => {
     const name = src.split("/").pop();
     e.target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%230e1230'/%3E%3Ctext x='50%25' y='50%25' fill='%23334155' font-size='11' font-family='sans-serif' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(name)}%3C/text%3E%3C/svg%3E`;
   };
-  return <img src={src} alt={alt} className={className} style={style} onError={fallback} loading="lazy" />;
+  return <img src={src} alt={alt} className={className} style={{ cursor: onClick ? "zoom-in" : "default", ...style }} onError={fallback} loading="lazy" onClick={onClick} />;
 }
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [shown, setShown] = useState(new Set());
   const [lang, setLang] = useState("th");
+
+  const [previewImg, setPreviewImg] = useState(null);
+  const [zoom, setZoom] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [isClosing, setIsClosing] = useState(false);
+  const wheelRef = useRef(null);
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    setPosition({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y,
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.touches.length !== 1) return;
+    setIsDragging(true);
+    setDragStart({
+      x: e.touches[0].clientX - position.x,
+      y: e.touches[0].clientY - position.y,
+    });
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    setPosition({
+      x: e.touches[0].clientX - dragStart.x,
+      y: e.touches[0].clientY - dragStart.y,
+    });
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    const el = wheelRef.current;
+    if (!el) return;
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      const zoomFactor = 0.15;
+      setZoom((z) => {
+        if (e.deltaY < 0) {
+          return Math.min(z + zoomFactor, 5);
+        } else {
+          return Math.max(z - zoomFactor, 0.5);
+        }
+      });
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [previewImg]);
+
+  const zoomIn = () => setZoom((z) => Math.min(z + 0.25, 5));
+  const zoomOut = () => setZoom((z) => Math.max(z - 0.25, 0.5));
+  const resetZoom = () => {
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const handlePreview = (src) => {
+    setIsClosing(false);
+    setPreviewImg(src);
+    resetZoom();
+  };
+
+  const closePreview = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setPreviewImg(null);
+      setIsClosing(false);
+      resetZoom();
+    }, 250);
+  };
 
   const t = T[lang];
   const experience = EXPERIENCE[lang];
@@ -395,8 +556,6 @@ export default function Portfolio() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
-
       <nav className={`pf-nav${scrolled ? " solid" : ""}`}>
         <div className="nav-brand" onClick={() => go("hero")}>{t.name}</div>
         <div className="nav-right">
@@ -434,7 +593,7 @@ export default function Portfolio() {
         <div className="hero-right">
           <div className="photo-wrap">
             <div className="photo-ring" />
-            <div className="photo-mask"><Img src="/images/Profile.jpg" alt={t.name} /></div>
+            <div className="photo-mask"><Img src="/images/Profile.jpg" alt={t.name} onClick={() => handlePreview("/images/Profile.jpg")} /></div>
           </div>
           <div className="photo-chip chip-a">{t.chipA}</div>
           <div className="photo-chip chip-b">{t.chipB}</div>
@@ -452,15 +611,38 @@ export default function Portfolio() {
               <p className="about-p">{t.aboutP1}</p>
               <p className="about-p">{t.aboutP2}</p>
               <p className="about-p">{t.aboutP3}</p>
-              <div className="edu-card">
-                <div className="edu-icon">🎓</div>
-                <div>
-                  <div className="edu-school">{t.eduSchool}</div>
-                  <div className="edu-detail">{t.eduDetail}</div>
+              <div className="about-cards" style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "2rem" }}>
+                <div className="edu-card" style={{ marginTop: 0 }}>
+                  <div className="edu-icon">🎓</div>
+                  <div>
+                    <div className="edu-school">{t.eduSchool}</div>
+                    <div className="edu-detail">{t.eduDetail}</div>
+                  </div>
+                </div>
+                <div className="edu-card" style={{ marginTop: 0 }}>
+                  <div className="edu-icon">💼</div>
+                  <div>
+                    <div className="edu-school">{t.aboutInternship}</div>
+                    <div className="edu-detail">{t.aboutInternshipDetail}</div>
+                  </div>
+                </div>
+                <div className="edu-card" style={{ marginTop: 0 }}>
+                  <div className="edu-icon">💼</div>
+                  <div>
+                    <div className="edu-school">{t.aboutGablePartTime}</div>
+                    <div className="edu-detail">{t.aboutGablePartTimeDetail}</div>
+                  </div>
+                </div>
+                <div className="edu-card" style={{ marginTop: 0 }}>
+                  <div className="edu-icon">💼</div>
+                  <div>
+                    <div className="edu-school">{t.aboutGableOutsource}</div>
+                    <div className="edu-detail">{t.aboutGableOutsourceDetail}</div>
+                  </div>
                 </div>
               </div>
             </div>
-            <Img src="/images/Profile_2.jpg" alt={t.name} className="about-img" style={{ height: "auto", width: "80%" }} />
+            <Img src="/images/Profile_2.jpg" alt={t.name} className="about-img" style={{ height: "auto", width: "80%" }} onClick={() => handlePreview("/images/Profile_2.jpg")} />
           </div>
         </div>
       </section>
@@ -515,7 +697,7 @@ export default function Portfolio() {
                 {ex.imgs && ex.imgs.length > 0 && (
                   <div className="tl-imgs">
                     {ex.imgs.map((img, j) => (
-                      <Img key={j} src={img.src} alt={`${ex.company} screenshot ${j + 1}`} className="tl-img" style={img.style} />
+                      <Img key={j} src={img.src} alt={`${ex.company} screenshot ${j + 1}`} className="tl-img" style={img.style} onClick={() => handlePreview(img.src)} />
                     ))}
                   </div>
                 )}
@@ -543,7 +725,7 @@ export default function Portfolio() {
               <div key={i} className="proj-card">
                 <div className="proj-thumbs">
                   {p.imgs.map((img, j) => (
-                    <Img key={j} src={img.src} alt={`${p.title} screenshot`} className="proj-thumb" style={img.style} />
+                    <Img key={j} src={img.src} alt={`${p.title} screenshot`} className="proj-thumb" style={img.style} onClick={() => handlePreview(img.src)} />
                   ))}
                 </div>
                 <div className="proj-body">
@@ -578,7 +760,7 @@ export default function Portfolio() {
               <div key={i} className="cert-card" style={c.highlight ? { borderColor: "rgba(251,146,60,.3)" } : {}}>
                 <div className="cert-left">
                   {c.logo
-                    ? <Img src={c.logo} alt={c.name} className="cert-large-img" style={c.imgStyle} />
+                    ? <Img src={c.logo} alt={c.name} className="cert-large-img" style={c.imgStyle} onClick={() => handlePreview(c.logo)} />
                     : <div className="cert-ico" style={{ background: "rgba(34,211,238,.1)", color: "#22d3ee", width: "80px", height: "80px", fontSize: "2.5rem" }}>{c.emoji}</div>
                   }
                 </div>
@@ -613,6 +795,114 @@ export default function Portfolio() {
         <span>© 2026 {t.name}</span>
         <span className="footer-brand">{t.footerRight}</span>
       </footer>
+
+      {previewImg && (
+        <div
+          ref={wheelRef}
+          className={`img-preview-modal${isClosing ? " closing" : ""}`}
+          style={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.85)",
+            backdropFilter: "blur(5px)",
+            zIndex: 9999,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+            userSelect: "none",
+          }}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closePreview}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              color: "white",
+              fontSize: "1.5rem",
+              width: "45px",
+              height: "45px",
+              borderRadius: "50%",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "background 0.2s, color 0.2s, transform 0.2s",
+              zIndex: 10000,
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.25)";
+              e.target.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.1)";
+              e.target.style.transform = "scale(1)";
+            }}
+          >
+            ✕
+          </button>
+
+          {/* Image Container */}
+          <div
+            className="preview-img-wrap"
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: isDragging ? "grabbing" : "grab",
+            }}
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+          >
+            <img
+              src={previewImg}
+              alt="Preview"
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "85vh",
+                objectFit: "contain",
+                transform: `translate(${position.x}px, ${position.y}px) scale(${zoom})`,
+                transition: isDragging ? "none" : "transform 0.15s ease-out",
+                pointerEvents: "none",
+                borderRadius: "4px",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.6)",
+              }}
+            />
+          </div>
+
+          {/* Control Bar */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              display: "flex",
+              gap: "10px",
+              background: "rgba(14, 18, 48, 0.8)",
+              padding: "8px 16px",
+              borderRadius: "30px",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(10px)",
+              zIndex: 10000,
+            }}
+          >
+            <button className="zoom-btn" onClick={zoomIn}>Zoom In (+)</button>
+            <button className="zoom-btn" onClick={zoomOut}>Zoom Out (-)</button>
+            <button className="zoom-btn" onClick={resetZoom}>Reset</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
